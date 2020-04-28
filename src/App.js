@@ -1,6 +1,6 @@
-import React, {Component} from "react";
+import React from "react";
 import "./App.css"
-import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap'
+import {Navbar, Nav, Form, FormControl} from 'react-bootstrap'
 import AddModal from "./Components/AddModal"
 
 class App extends React.Component {
@@ -18,7 +18,7 @@ class App extends React.Component {
 
   componentDidMount() {
     
-      fetch("https://api.myjson.com/bins/zyv02")
+      fetch("https://api.jsonbin.io/b/5ea833484c87c3359a632938")
       .then(response=>response.json())
       .then(response=>{
         this.setState({
@@ -52,7 +52,7 @@ class App extends React.Component {
                 </div>
                 <div className="flip-card-back">
                   <div>
-                  <AddModal pic = {book.detail} title = {book.title} />
+                  <AddModal pic = {book.details} title = {book.title} />
                   </div>
                   <div>
                   <h1>{book.title}</h1>
